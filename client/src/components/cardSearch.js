@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ title, author, image, description, handleSaveBook, id }) => {
+const Card = ({ title, author, image, description, handleSaveBook, id, link }) => {
   return (
     <div class="container" >
       <div
@@ -32,12 +32,14 @@ const Card = ({ title, author, image, description, handleSaveBook, id }) => {
           >
             Save
           </button>
+          <a href={link} target="_blank">
           <button
             style={{ position: "absolute", top: "5px", right: "0px" }}
             class="btn btn-info"
           >
             View
           </button>
+          </a>
           <p style={{ fontSize: 18, fontWeight: "bold", paddingTop: 20 }}>
             {title}
           </p>

@@ -30,6 +30,11 @@ class Save extends Component {
       .catch(err => console.log(err));
   };
 
+  handleView = id => {
+    console.log(id)
+
+  }
+
   render() {
     return (
       <div>
@@ -55,6 +60,7 @@ class Save extends Component {
                   image={book.image}
                   description={book.description}
                   deleteBook={this.deleteBook}
+                  link={book.link}
                   id={book._id}
                 />
               );

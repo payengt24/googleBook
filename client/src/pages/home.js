@@ -62,7 +62,8 @@ class Home extends Component {
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors[0],
       image: book.volumeInfo.imageLinks.thumbnail,
-      description: book.volumeInfo.description
+      description: book.volumeInfo.description,
+      link:book.volumeInfo.infoLink
     })
       .then(() => this.loadBooks())
       .catch(error => console.log(error));
@@ -109,13 +110,14 @@ class Home extends Component {
             </p>
 
             {this.state.books.map(book => {
-              //  console.log('book', book)
+               console.log('book', book)
               return (
                 <CardSearch
                   title={book.volumeInfo.title}
                   author={book.volumeInfo.authors[0]}
                   image={book.volumeInfo.imageLinks.thumbnail}
                   description={book.volumeInfo.description}
+                  link={book.volumeInfo.infoLink}
                   handleSaveBook={this.handleSaveBook}
                   id={book.id}
                   key={book.id}
